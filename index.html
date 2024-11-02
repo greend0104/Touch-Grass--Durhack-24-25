@@ -1,114 +1,117 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Touch Grass</title>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="styles.css" />
+	<title>Touch Grass</title>
 
 	<style>
-        #response {
-            white-space: pre-wrap;
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ddd;
-            margin-top: 10px;
-        }
-    </style>
-  </head>
+		#response {
+			white-space: pre-wrap;
+			background-color: #f4f4f4;
+			padding: 10px;
+			border: 1px solid #ddd;
+			margin-top: 10px;
+		}
+	</style>
+</head>
 
-  <body class="h-screen grid place-items-center bg-gray-100">
-    <div class="text-center">
-        <h1 class="text-6xl font-bold mb-4">Touch Grass!</h1>
-        <h2 class="text-5xl mb-4">How to Play!</h2>
-        <h3 class="text-4xl mb-4">Welcome!</h3>
-    </div>
-</body>
-
-  <body>
-    
-    <div class="flex-col text-center">
-        <h1 class="font-bold mb-4">Heading</h1>
-        <h2 class="text-4xl mb-4">Touch Grass!</h2>
-        <h3>How to Play!</h3>
-        
-        <button type="button">START NOW</button>
-    
-    
-    </div>
-
-    <div>
+<body>
+	<div class="flex items-center">
+		<div><h1 class="text-6xl font-bold mb-4">Touch Grass!</h1></div>
+		
+		<h2 class="text-5xl mb-4">How to Play!</h2>
+		<h3 class="text-4xl mb-4">Welcome!</h3>
+	</div>
 
 
-    </div>
-    
+	<div class="flex-col text-center">
+		<h1 class="font-bold mb-4">Heading</h1>
+		<h2 class="text-4xl mb-4">Touch Grass!</h2>
+		<h3>How to Play!</h3>
 
-        <h1 >Touch Grass!</h1>
-
-        <br>
-
-        <h2>How to Play!</h2>
-
-        <p class="text-2xl">Welcome to Touch Grass!<br>
-            Go outisde and explore the world outside! Go on an adventure searching for items around you, take pictures of the items and collect points! Compete against others in your area to be at the top of the leaderboard!<br>
-            Are you ready to start exploring?<br>
-            Use the dropdown menu below to select how long you'd like to explore for this time and click START NOW. Start exploring and scanning in your picture to gain points to compete against yourself and others<br>     
-        </p>
-    
-    <br>
-    
-    </div>
-
-    <form action="">
-        <label for="times">Choose a time:</label>
-        <select name="times" id="times">
-          <option value="5">5mins</option>
-          <option value="10">10mins</option>
-          <option value="15">15mins</option>
-          <option value="20">20mins</option>
-        </select>
-        <br><br>
-        <input type="submit" value="Submit">
-      </form>
+		<button type="button">START NOW</button>
 
 
-    <!-- Leaderboard -->
-    
-    <table>
-        <tr>
-          <th>Place</th>
-          <th>User</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>user1</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>user2</td>
-        </tr>
-    </table>
+	</div>
 
-    <br>
-
-    <p>Are you ready?</p>
-    <br>
-    <button type="button">START NOW</button>
+	<div>
 
 
-    <!-- Satellite API
+	</div>
+
+
+	<h1>Touch Grass!</h1>
+
+	<br>
+
+	<h2>How to Play!</h2>
+
+	<p class="text-2xl">Welcome to Touch Grass!<br>
+		Go outisde and explore the world outside! Go on an adventure searching for items around you, take pictures of
+		the items and collect points! Compete against others in your area to be at the top of the leaderboard!<br>
+		Are you ready to start exploring?<br>
+		Use the dropdown menu below to select how long you'd like to explore for this time and click START NOW. Start
+		exploring and scanning in your picture to gain points to compete against yourself and others<br>
+	</p>
+
+	<br>
+
+	</div>
+
+	<form action="">
+		<label for="times">Choose a time:</label>
+		<select name="times" id="times">
+			<option value="5">5mins</option>
+			<option value="10">10mins</option>
+			<option value="15">15mins</option>
+			<option value="20">20mins</option>
+		</select>
+		<br><br>
+		<input type="submit" value="Submit">
+	</form>
+
+
+	<!-- Leaderboard -->
+
+	<table>
+		<tr>
+			<th>Place</th>
+			<th>User</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>user1</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>user2</td>
+		</tr>
+	</table>
+
+	<br>
+
+	<p>Are you ready?</p>
+	<br>
+	<button type="button">START NOW</button>
+
+
+	<!-- Satellite API
     <div class="main-div">
       <button id="satelliteButton">Click to view ISS location!</button>
       <p id="satelliteText"></p>
     </div> -->
 
-    <!-- <div class="navbar">
+	<!-- <div class="navbar">
       <a class="active" href="index.html">Home</a>
       <a href="page2.html">Page2</a>
     </div> -->
 	<h1>Upload Image</h1>
 	<input type="file" id="fileInput">
-    <button id="uploadButton">Upload</button>
-    <div id="response"></div>
-    <script src="index.js"></script>
-  </body>
+	<button id="uploadButton">Upload</button>
+	<div id="response"></div>
+	<script src="index.js"></script>
+</body>
+
 </html>
