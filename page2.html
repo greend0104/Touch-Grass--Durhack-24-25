@@ -1,48 +1,29 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="index.css" />
-    <title>DurHack Workshop</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="index.css" />
+	<title>DurHack Workshop</title>
 </head>
+
 <body>
-    <div class="main-div">
-        <button id="exampleButton">Click to change paragraph!</button>
-        <p>Hello World!</p>
-        <p id="blue">This paragraph should be blue</p>
-    </div>
+	<div>
+		<button id="generateButton">Generate</button>
+	</div>
+	<video autoplay="true" id="videoElement"></video>
+	<div>
+		<button id="captureButton">Capture Photo/ Retake</button>
+	</div>
+	<canvas id="canvasElement" style="display: none;"></canvas>
+	<img id="photoElement" style="display: none;">
+	<div>
+		<button id="uploadButton">Submit</button>
+	</div>
 
-    <!-- Satellite API -->
-     <div class="main-div">
-        <button id="satelliteButton">Click to view ISS location!</button>
-        <p id="satelliteText"></p>
-     </div>
 
-     <div class="navbar">
-        <a href="index.html">Home</a>
-        <a class="active" href="page2.html">Computers in the workplace</a>
-      </div>
-
-      <!-- Leaderboard -->
-
-      <table>
-        <tr>
-          <th>Company</th>
-          <th>Contact</th>
-          <th>Country</th>
-        </tr>
-        <tr>
-          <td>Alfreds Futterkiste</td>
-          <td>Maria Anders</td>
-          <td>Germany</td>
-        </tr>
-        <tr>
-          <td>Centro comercial Moctezuma</td>
-          <td>Francisco Chang</td>
-          <td>Mexico</td>
-        </tr>
-      </table>
-
-    <script src="index.js"></script>
+	<script src="predict.js"></script>
 </body>
+
 </html>

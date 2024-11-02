@@ -6,6 +6,7 @@ import base64
 from clarifai_grpc.grpc.api import service_pb2, service_pb2_grpc, resources_pb2
 from clarifai_grpc.grpc.api.status import status_code_pb2
 from clarifai_grpc.channel.clarifai_channel import ClarifaiChannel
+import random
 
 app = Flask(__name__)
 CORS(app)  # This will enable CORS for all routes
@@ -62,13 +63,12 @@ def predict():
         right_col = round(region.region_info.bounding_box.right_col, 3)
         for concept in region.data.concepts:
             name = concept.name
-            value = round(concept.value, 4)
             results.append({
-                "name": name,
-                "value": value,
+                "name": name
             })
 
     return jsonify(results)
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
