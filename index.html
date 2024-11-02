@@ -4,6 +4,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Touch Grass</title>
+
+	<style>
+        #response {
+            white-space: pre-wrap;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+    </style>
   </head>
 
   <body class="h-screen grid place-items-center bg-gray-100">
@@ -95,7 +105,10 @@
       <a class="active" href="index.html">Home</a>
       <a href="page2.html">Page2</a>
     </div> -->
-
+	<h1>Upload Image</h1>
+	<input type="file" id="fileInput">
+    <button id="uploadButton">Upload</button>
+    <div id="response"></div>
     <script src="index.js"></script>
   </body>
 </html>
