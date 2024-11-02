@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
@@ -13,6 +14,8 @@ const ChallengeEntry = mongoose.model(
     score: Number,
   })
 );
+
+app.use(cors());
 
 app.use(express.json());
 
@@ -30,7 +33,7 @@ app.post("/submit", async (req, res) => {
 });
 
 // Returns sorted leaderboard
-app.get("/", async (req, res) => {
+app.get("/leaderboard", async (req, res) => {
   const challengeEntries = await ChallengeEntry.find();
   let nameMap = new Map();
   for (const entry of challengeEntries) {
