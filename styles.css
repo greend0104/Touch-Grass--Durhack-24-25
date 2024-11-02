@@ -204,7 +204,7 @@ abbr:where([title]) {
 Remove the default font size and weight for headings.
 */
 
-/* h1,
+h1,
 h2,
 h3,
 h4,
@@ -212,9 +212,7 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
-} */
-
-
+}
 
 /*
 Reset links to optimize for opt-in styling instead of opt-out.
@@ -556,26 +554,49 @@ video {
   display: none;
 }
 
-.flex {
-  display: flex;
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .table {
   display: table;
 }
 
-.h-screen {
-  height: 100vh;
+.rounded {
+  border-radius: 0.25rem;
 }
 
-.items-center {
-  align-items: center;
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
-.justify-center {
-  justify-content: center;
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
-.font-bold {
-  font-weight: 700;
+.p-1 {
+  padding: 0.25rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
