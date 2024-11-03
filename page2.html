@@ -9,18 +9,20 @@
     <title>Touch Grass</title>
   </head>
 
-  <body>
+  <body class="p-4">
     <div>
-      <button class="bg-gray-300 rounded-lg p-1" id="generateButton">Skip Item</button>
-    </div>
-    <video autoplay="true" id="videoElement"></video>
-    <div>
-      <button class="bg-gray-300 rounded-lg p-1" id="captureButton">Capture Photo/ Retake</button>
-    </div>
-    <canvas id="canvasElement" style="display: none"></canvas>
-    <img id="photoElement" style="display: none" />
-    <div>
-      <button class="bg-gray-300 rounded-lg p-1" id="uploadButton">Submit</button>
+      <div>
+        <button class="bg-gray-300 rounded-lg p-1 m-3" id="generateButton">Skip Item</button>
+      </div>
+      <video class="m-3" autoplay="true" id="videoElement"></video>
+      <div>
+        <button class="bg-gray-300 rounded-lg p-1 m-3" id="captureButton">Capture Photo/ Retake</button>
+      </div>
+      <canvas class="m-3" id="canvasElement" style="display: none"></canvas>
+      <img class="m-3" id="photoElement" style="display: none" />
+      <div>
+        <button class="bg-gray-300 rounded-lg p-1 m-3 " id="uploadButton">Submit</button>
+      </div>
     </div>
 
     <script src="predict.js"></script>
