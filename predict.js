@@ -1,12 +1,30 @@
+////////////////////////////////////////////////
+// Set the base URL for the API to the python server in app.py
+////////////////////////////////////////////////
 const apiBase = "http://localhost:3000";
 
+////////////////////////////////////////////////
+// Wait for the DOM to fully load before running the script
+////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", function() {
+    ////////////////////////////////////////////////////
+    // Initialize variables and constants
+    // objectList: List of objects to be recognized
+    // randomItem: Variable to store the randomly generated item
+    // points: Variable to keep track of the score
+    // time: Time limit for the game, retrieved from URL parameters
+    // username: Username of the player, retrieved from URL parameters
+    ////////////////////////////////////////////////////
     const objectList = ["Hat", "Headphones", "Jacket", "Light switch", "Pen", "Umbrella"];
     let randomItem = null; // Declare randomItem here to make it accessible
-    generateRandomItem()
+    generateRandomItem();
     let points = 0;
-    const time = new URLSearchParams(window.location.search).get("time")
-    const username = new URLSearchParams(window.location.search).get("username")
+    const time = new URLSearchParams(window.location.search).get("time");
+    const username = new URLSearchParams(window.location.search).get("username");
+
+    ////////////////////////////////////////////////////
+    // Set a timeout to submit the score after the specified time
+    ////////////////////////////////////////////////////
     setTimeout(async () => {
         const submitRoute = new URL("/submit", apiBase);
         await fetch(submitRoute, {
@@ -19,10 +37,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 username
             })
         });
-        alert("Well done! You scored " + points)
-        window.location.href = "/"
-    }, parseInt(time) * 60 * 1000)
+        alert("Well done! You scored " + points);
+        window.location.href = "/";
+    }, parseInt(time) * 60 * 1000);
 
+    ////////////////////////////////////////////////////
+    // Get references to HTML elements
+    ////////////////////////////////////////////////////
     var video = document.getElementById("videoElement");
     var canvas = document.getElementById("canvasElement");
     var photo = document.getElementById("photoElement");
@@ -30,7 +51,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var uploadButton = document.getElementById("uploadButton");
     var generateButton = document.getElementById("generateButton");
 
-
+    ////////////////////////////////////////////////////
+    // Access the user's webcam and stream the video to the video element
+    ////////////////////////////////////////////////////
     if (navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({ video: true })
             .then(function (stream) {
@@ -41,6 +64,9 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     }
 
+    ////////////////////////////////////////////////////
+    // Capture a photo from the video stream and display it
+    ////////////////////////////////////////////////////
     function capturePhoto() {
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
@@ -50,6 +76,9 @@ document.addEventListener("DOMContentLoaded", function() {
         photo.style.display = 'block';
     }
 
+    ////////////////////////////////////////////////////
+    // Upload the captured photo to the server for prediction
+    ////////////////////////////////////////////////////
     function uploadPhoto() {
         const photoDataUrl = canvas.toDataURL('image/jpeg');
         const blob = dataURLToBlob(photoDataUrl);
@@ -63,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .then(response => response.json())
         .then(data => {
-            //displayResponse(data);
             compareWithPrediction(data); // Compare after receiving the prediction data
         })
         .catch((error) => {
@@ -71,6 +99,9 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    ////////////////////////////////////////////////////
+    // Convert a data URL to a Blob
+    ////////////////////////////////////////////////////
     function dataURLToBlob(dataURL) {
         const parts = dataURL.split(';base64,');
         const byteString = atob(parts[1]);
@@ -83,12 +114,18 @@ document.addEventListener("DOMContentLoaded", function() {
         return new Blob([ab], { type: mimeString });
     }
 
+    ////////////////////////////////////////////////////
+    // Generate a random item from the object list
+    ////////////////////////////////////////////////////
     function generateRandomItem() {
         randomItem = objectList[Math.floor(Math.random() * objectList.length)];
         console.log('Generated item:', randomItem);
         alert(`Generated item: ${randomItem}`);
     }
 
+    ////////////////////////////////////////////////////
+    // Compare the prediction data with the randomly generated item, returns if a match is found.
+    ////////////////////////////////////////////////////
     function compareWithPrediction(predictionData) {
         if (!randomItem) {
             alert('Please generate an item first.');
@@ -105,13 +142,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (matchFound) {
             alert(`Match found: ${randomItem}`);
-            points++
+            points++;
             generateRandomItem();
         } else {
             alert(`No match found for: ${randomItem}`);
         }
     }
 
+    ////////////////////////////////////////////////////
+    // Add event listeners to buttons
+    ////////////////////////////////////////////////////
     captureButton.addEventListener('click', capturePhoto);
     uploadButton.addEventListener('click', uploadPhoto);
     generateButton.addEventListener('click', generateRandomItem);
