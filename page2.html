@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="index.css" />
-	<title>DurHack Workshop</title>
-</head>
+    <title>Touch Grass</title>
+  </head>
 
-<body>
-	<div>
-		<button id="generateButton">Generate</button>
-	</div>
-	<video autoplay="true" id="videoElement"></video>
-	<div>
-		<button id="captureButton">Capture Photo/ Retake</button>
-	</div>
-	<canvas id="canvasElement" style="display: none;"></canvas>
-	<img id="photoElement" style="display: none;">
-	<div>
-		<button id="uploadButton">Submit</button>
-	</div>
+  <body>
+    <div>
+      <button id="generateButton">Generate</button>
+    </div>
+    <video autoplay="true" id="videoElement"></video>
+    <div>
+      <button id="captureButton">Capture Photo/ Retake</button>
+    </div>
+    <canvas id="canvasElement" style="display: none"></canvas>
+    <img id="photoElement" style="display: none" />
+    <div>
+      <button id="uploadButton">Submit</button>
+    </div>
 
-
-	<script src="predict.js"></script>
-</body>
-
+    <script src="predict.js"></script>
+  </body>
 </html>
