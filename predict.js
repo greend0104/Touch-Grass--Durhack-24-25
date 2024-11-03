@@ -1,5 +1,23 @@
+const apiBase = "http://localhost:3000";
+
 document.addEventListener("DOMContentLoaded", function() {
-    let visible = true;
+    let points = 0;
+    const time = new URLSearchParams(window.location.search).get("time")
+    const username = new URLSearchParams(window.location.search).get("username")
+    setTimeout(async () => {
+        const submitRoute = new URL("/submit", apiBase);
+        await fetch(submitRoute, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                points,
+                username
+            })
+        });
+        window.location.href = "/"
+    }, parseInt(time) * 60 * 1000)
 
     var video = document.getElementById("videoElement");
     var canvas = document.getElementById("canvasElement");
@@ -85,20 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (matchFound) {
             alert(`Match found: ${randomItem}`);
+            points++
         } else {
             alert(`No match found for: ${randomItem}`);
         }
-    }
-
-    function displayResponse(data) {
-        const responseDiv = document.getElementById('response');
-        responseDiv.innerHTML = '';
-
-        data.forEach(item => {
-            const div = document.createElement('div');
-            div.textContent = `${item.name}: ${item.value}`;
-            responseDiv.appendChild(div);
-        });
     }
 
     captureButton.addEventListener('click', capturePhoto);
