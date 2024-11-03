@@ -26,12 +26,12 @@ function populateLeaderboard(leaderboard) {
 
 document.addEventListener("DOMContentLoaded", async () => {
   populateLeaderboard(await loadLeaderboard());
-
   const startButton = document.getElementById("start");
   startButton.onclick = () => {
     const time = document.getElementById("times").value;
     const name = document.getElementById("name").value;
     if (!name) return alert("Please provide your name!");
-    window.location.href = "/page2.html?" + (new URLSearchParams({time, username: name})).toString();
-}
+    window.location.href =
+      "/page2.html?" + new URLSearchParams({ time, username: name }).toString();
+  };
 });

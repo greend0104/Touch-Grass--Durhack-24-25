@@ -44,7 +44,7 @@ app.get("/leaderboard", async (req, res) => {
   }
   const leaderboard = Array.from(nameMap.entries())
     .map(([username, score]) => ({ username, score }))
-    .sort((a,b) => b.score - a.score)
+    .sort((a, b) => b.score - a.score)
     .slice(0, 10);
 
   res.json(leaderboard);
