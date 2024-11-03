@@ -8,7 +8,7 @@
 	<title>Touch Grass</title>
 </head>
 
-<body class="p-4">
+<body class="p-7">
 	<h1 class="text-4xl">Touch Grass!</h1>
 
 	<br>
@@ -24,37 +24,38 @@
 	</p>
 
 	<br>
+  
+</div>
 
-	</div>
+<!-- Leaderboard -->
+<div>
+  <table class="table-auto bg-gray-300 rounded" id="leaderboard">
+    <tr>
+      <th>User</th>
+      <th>Score</th>
+    </tr>
+  
+  </table>
+</div>
 
-	<form action="">
-		<label for="times">Choose a time:</label>
-		<select name="times" id="times">
-			<option value="1">1min</option>
-			<option value="5">5mins</option>
-			<option value="10">10mins</option>
-			<option value="15">15mins</option>
-			<option value="20">20mins</option>
-		</select>
-	</form>
-
-
-	<!-- Leaderboard -->
-
-	<table id="leaderboard">
-		<tr>
-			<th>User</th>
-			<th>Score</th>
-		</tr>
-
-	</table>
-
-	<br>
+<div class="mt-5">
+  <form action="">
+    <label for="times">Choose a time:</label>
+    <select name="times" id="times">
+      <option value="1">1min</option>
+        <option value="5">5mins</option>
+        <option value="10">10mins</option>
+        <option value="15">15mins</option>
+        <option value="20">20mins</option>
+      </select>
+    </form>
+</div>
 
 	<p>Are you ready?</p>
-	<br>
-  <input id="name" type="text" placeholder="Your name...">
-	<button id="start" class="bg-gray-300 rounded-lg p-1">START NOW</button>
+
+  <input class="mt-2 bg-gray-100 rounded" id="name" type="text" placeholder="Your name...">
+  <br>
+	<button id="start" class="bg-gray-300 rounded-lg p-1 mt-3">START NOW</button>
 
 
 	<script src="index.js"></script>
