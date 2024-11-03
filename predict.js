@@ -1,6 +1,9 @@
 const apiBase = "http://localhost:3000";
 
 document.addEventListener("DOMContentLoaded", function() {
+    const objectList = ["Hat", "Headphones", "Jacket", "Light switch", "Pen", "Umbrella"];
+    let randomItem = null; // Declare randomItem here to make it accessible
+    generateRandomItem()
     let points = 0;
     const time = new URLSearchParams(window.location.search).get("time")
     const username = new URLSearchParams(window.location.search).get("username")
@@ -16,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 username
             })
         });
+        alert("Well done! You scored " + points)
         window.location.href = "/"
     }, parseInt(time) * 60 * 1000)
 
@@ -26,8 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
     var uploadButton = document.getElementById("uploadButton");
     var generateButton = document.getElementById("generateButton");
 
-    const objectList = ["Hat", "Headphones", "Jacket", "Light switch", "Pen", "Umbrella"];
-    let randomItem = null; // Declare randomItem here to make it accessible
 
     if (navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({ video: true })
@@ -104,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (matchFound) {
             alert(`Match found: ${randomItem}`);
             points++
+            generateRandomItem();
         } else {
             alert(`No match found for: ${randomItem}`);
         }
